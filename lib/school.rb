@@ -25,18 +25,10 @@ class School
     end
 
     def sort
-        sorted_hash = {}
-        @roster.each{|k, v| sorted_hash[k] = v.sort}
-        sorted_hash
+        # sorted_hash = {}
+        # @roster.each{|k, v| sorted_hash[k] = v.sort}
+        # sorted_hash
+        @roster.keys.each_with_object({}){|k, sorted_hash| sorted_hash[k] = @roster[k].sort}
     end
 end
 
-# school = School.new("Bayside HS")
-
-# school.add_student("Joel", 10)
-# school.add_student("Les", 10)
-# school.add_student("Bob", 5)
-# school.add_student("pao", 5)
-# school.add_student("Juan", 10)
-
-# puts school.sort
